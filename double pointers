@@ -13,3 +13,33 @@ void main() {
        - '*p' dereferences 'p' to get 'a' (which is 10)
        - '**q' dereferences 'q' to get '*p', which in turn gets 'a' (also 10) */
 }
+#include<stdio.h>  // Standard input-output library for printf function
+
+void main() { 
+    int a = 10;  // Declaring an integer variable 'a' and initializing it with 10
+
+    int *p = &a;  // Declaring a single pointer 'p' that stores the address of 'a'
+    
+    int **q = &p;  // Declaring a double pointer 'q' that stores the address of pointer 'p'
+
+    int ***r = &q;  // Declaring a triple pointer 'r' that stores the address of pointer 'q'
+
+    printf("a = %d %d %d %d", a, *p, **q, ***r);  
+    /* Printing values:
+       - 'a' directly (which is 10)
+       - '*p' dereferences 'p' to get 'a' (which is 10)
+       - '**q' dereferences 'q' to get '*p', which gets 'a' (also 10)
+       - '***r' dereferences 'r' to get '**q', which gets '*p', and finally gets 'a' (again 10) */
+
+    printf("add of q = %x %x", r , &q);  
+    /* Printing memory addresses:
+       - 'r' stores the address of 'q'
+       - '&q' gives the actual address of 'q'
+       - Both should match */
+
+    printf("add of p = %x %x", &p , q);  
+    /* Printing memory addresses:
+       - '&p' gives the actual address of 'p'
+       - 'q' holds the address of 'p'
+       - Both should match */
+}
