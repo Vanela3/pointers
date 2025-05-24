@@ -1,0 +1,23 @@
+#include<stdio.h>  // Standard input-output library for printf function
+
+void main() { 
+    int a[5] = {1, 4, 2, -8, 0};  // Declaring an integer array 'a' with 5 elements
+
+    int *p = &a[0];  // Initializing pointer 'p' to the address of the first element of array 'a'
+
+    printf("value is %d ", *p);  
+    // Printing the value at the memory address pointed by 'p' (which is 'a[0]' = 1)
+
+    printf("add of ele is %u ", p);  
+    // Printing the memory address stored in 'p' (address of 'a[0]')
+
+    p = p + 2;  // Moving pointer 'p' forward by 2 positions (now pointing to 'a[2]')
+
+    *p = 34;  // Updating the value at 'a[2]', changing it from 2 to 34
+
+    printf("value is %d ", *p);  
+    // Printing the updated value of 'a[2]' (which is now 34)
+
+    printf("add is ele %u", p);  
+    // Printing the memory address stored in 'p' (which now points to 'a[2]')
+}
