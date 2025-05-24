@@ -1,0 +1,15 @@
+#include<stdio.h>  // Standard input-output library for printf function
+
+void main() { 
+    int a = 10;  // Declaring an integer variable 'a' and initializing it with 10
+
+    int *p = &a;  // Declaring a pointer 'p' that stores the address of 'a'
+    
+    int **q = &p;  // Declaring a double pointer 'q' that stores the address of pointer 'p'
+
+    printf("a = %d %d %d", a, *p, **q);  
+    /* Printing values:
+       - 'a' directly (which is 10)
+       - '*p' dereferences 'p' to get 'a' (which is 10)
+       - '**q' dereferences 'q' to get '*p', which in turn gets 'a' (also 10) */
+}
