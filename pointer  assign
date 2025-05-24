@@ -1,0 +1,17 @@
+#include<stdio.h>  // Including standard input-output library for printf function
+
+void main() { 
+    int a=10,b=5;  // Declaring two integer variables a and b, initialized with values 10 and 5
+    int *p,*q;  // Declaring two pointer variables p and q, which will store addresses of integers
+    
+    p=&a;  // Assigning the address of variable 'a' to pointer 'p'
+    q=&b;  // Assigning the address of variable 'b' to pointer 'q'
+
+    *q=*p;  // Copying the value stored at address 'p' (which is a=10) to the address pointed by 'q' (which was b, now updated to 10)
+
+    printf("a= %d %d %d",a,*p,*q);  
+    // Printing values:
+    // 'a' is still 10,
+    // '*p' dereferences 'p' to get 'a', which is 10,
+    // '*q' now holds 10 since it was modified by *q = *p
+}
